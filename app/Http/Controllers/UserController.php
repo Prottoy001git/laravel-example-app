@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use illuminate\Http\Request;
-use illuminate\Support\Facades\DB;
+use App\Models\Role;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use PHPUnit\Event\Runtime\PHP;
 
 class UserController extends Controller
@@ -39,6 +41,9 @@ class UserController extends Controller
             // ->get();
             // ->paginate(10);   //10 items per page
             ->paginate(3);      //3 items per page
+
+            // $sl = ($users->currentPage()-1) * $users->perPage() + 1;
+        // return view('admin.pages.users.index', compact('users', 'sl'));
         return view('admin.pages.users.index', compact('users'));
     }
     public function show($id)
@@ -49,5 +54,38 @@ class UserController extends Controller
             ->where('u.id', $id)
             ->first();
         return view('admin.pages.users.show', compact('user'));
+    }
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        // dd('Deleted');
+        return redirect()->route('users.index')->with('success', 'User deleted successfully!');
+    }
+    public function create()
+    {
+        $roles =Role::all();
+        // dd($roles);   
+        return view('admin.pages.users.create',compact('roles'));
+    }
+    public function store(Request $request)
+    {
+        // if not validated, below code will not even execute, User::create will not execute
+        $request->validate([
+            'first_name' => 'required|min:2|max:20',
+            'last_name' => ['required', 'min:2', 'max:20'],
+            'email' => ['required', 'email', 'unique:users'],
+            'password' => ['required', 'min:6', 'confirmed'],
+        ]);
+
+        // dd($request->all());
+        $user = User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'role_id' => $request->role_id,
+        ]);
+        dd($user);
     }
 }

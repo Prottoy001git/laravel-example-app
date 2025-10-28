@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2025 at 08:08 AM
+-- Generation Time: Oct 28, 2025 at 08:18 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -149,36 +149,11 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'accusantium', '2025-10-26 22:29:29', '2025-10-26 22:29:29'),
-(2, 'assumenda', '2025-10-26 22:29:29', '2025-10-26 22:29:29'),
-(3, 'ut', '2025-10-26 22:29:29', '2025-10-26 22:29:29'),
-(4, 'et', '2025-10-26 22:29:29', '2025-10-26 22:29:29'),
-(5, 'ut', '2025-10-26 22:29:29', '2025-10-26 22:29:29'),
-(6, 'et', '2025-10-27 00:25:43', '2025-10-27 00:25:43'),
-(7, 'aliquid', '2025-10-27 00:25:43', '2025-10-27 00:25:43'),
-(8, 'voluptatem', '2025-10-27 00:25:43', '2025-10-27 00:25:43'),
-(9, 'quia', '2025-10-27 00:25:44', '2025-10-27 00:25:44'),
-(10, 'dolorum', '2025-10-27 00:25:44', '2025-10-27 00:25:44'),
-(11, 'non', '2025-10-27 00:25:53', '2025-10-27 00:25:53'),
-(12, 'fugiat', '2025-10-27 00:25:53', '2025-10-27 00:25:53'),
-(13, 'iusto', '2025-10-27 00:25:53', '2025-10-27 00:25:53'),
-(14, 'sapiente', '2025-10-27 00:25:53', '2025-10-27 00:25:53'),
-(15, 'et', '2025-10-27 00:25:53', '2025-10-27 00:25:53'),
-(16, 'ratione', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
-(17, 'at', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
-(18, 'sit', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
-(19, 'eligendi', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
-(20, 'molestiae', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
-(21, 'non', '2025-10-27 00:25:59', '2025-10-27 00:25:59'),
-(22, 'et', '2025-10-27 00:25:59', '2025-10-27 00:25:59'),
-(23, 'et', '2025-10-27 00:25:59', '2025-10-27 00:25:59'),
-(24, 'cumque', '2025-10-27 00:25:59', '2025-10-27 00:25:59'),
-(25, 'qui', '2025-10-27 00:25:59', '2025-10-27 00:25:59'),
-(26, 'modi', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(27, 'quasi', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(28, 'minus', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(29, 'nihil', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(30, 'qui', '2025-10-27 00:26:02', '2025-10-27 00:26:02');
+(1, 'Admin', '2025-10-26 22:29:29', '2025-10-26 22:29:29'),
+(2, 'Editor', '2025-10-26 22:29:29', '2025-10-26 22:29:29'),
+(3, 'Author', '2025-10-26 22:29:29', '2025-10-26 22:29:29'),
+(4, 'Officer', '2025-10-26 22:29:29', '2025-10-26 22:29:29'),
+(5, 'Sales Person', '2025-10-26 22:29:29', '2025-10-26 22:29:29');
 
 -- --------------------------------------------------------
 
@@ -244,7 +219,6 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `role_id`, `email
 (23, 'Amani', 'Schaefer', 'clarkin@example.org', '3', '2025-10-27 00:25:54', '$2y$12$jPt6QR0iEhtKia/wBXiy6.7f7hxhJknxx6v6LODE.UmjsGxu8kJ72', '1COthgCsBj', '2025-10-27 00:25:54', '2025-10-27 00:25:54'),
 (24, 'Noemie', 'Kutch', 'feeney.mina@example.net', '1', '2025-10-27 00:25:54', '$2y$12$jPt6QR0iEhtKia/wBXiy6.7f7hxhJknxx6v6LODE.UmjsGxu8kJ72', 'WU5UP9e3My', '2025-10-27 00:25:54', '2025-10-27 00:25:54'),
 (25, 'Monica', 'Orn', 'gottlieb.miracle@example.com', '11', '2025-10-27 00:25:54', '$2y$12$jPt6QR0iEhtKia/wBXiy6.7f7hxhJknxx6v6LODE.UmjsGxu8kJ72', 'iPrXxrSYS0', '2025-10-27 00:25:54', '2025-10-27 00:25:54'),
-(26, 'Eudora', 'Shanahan', 'rkassulke@example.net', '9', '2025-10-27 00:25:54', '$2y$12$jPt6QR0iEhtKia/wBXiy6.7f7hxhJknxx6v6LODE.UmjsGxu8kJ72', 'QybTt1dqp6', '2025-10-27 00:25:54', '2025-10-27 00:25:54'),
 (27, 'Mitchel', 'Haag', 'tito.predovic@example.org', '11', '2025-10-27 00:25:54', '$2y$12$jPt6QR0iEhtKia/wBXiy6.7f7hxhJknxx6v6LODE.UmjsGxu8kJ72', 'MCQUFFvq77', '2025-10-27 00:25:54', '2025-10-27 00:25:54'),
 (28, 'Noble', 'Huels', 'ddavis@example.com', '12', '2025-10-27 00:25:54', '$2y$12$jPt6QR0iEhtKia/wBXiy6.7f7hxhJknxx6v6LODE.UmjsGxu8kJ72', 'OaanEQDKMO', '2025-10-27 00:25:54', '2025-10-27 00:25:54'),
 (29, 'Melvina', 'McKenzie', 'ugreenfelder@example.com', '11', '2025-10-27 00:25:54', '$2y$12$jPt6QR0iEhtKia/wBXiy6.7f7hxhJknxx6v6LODE.UmjsGxu8kJ72', 'KIvQiQvqPQ', '2025-10-27 00:25:54', '2025-10-27 00:25:54'),
@@ -252,7 +226,6 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `role_id`, `email
 (31, 'Manley', 'Weimann', 'elmore.romaguera@example.net', '8', '2025-10-27 00:25:57', '$2y$12$RxGOu5QBthaK4vBAbebt7.HOFWncxrxmCEBXgvsbWKwIZk6Eg5fTy', 'rxaOxGG7C2', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
 (32, 'Adeline', 'Sipes', 'kfisher@example.com', '18', '2025-10-27 00:25:57', '$2y$12$RxGOu5QBthaK4vBAbebt7.HOFWncxrxmCEBXgvsbWKwIZk6Eg5fTy', '1sdSLWEaIm', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
 (33, 'Britney', 'Beer', 'waters.marcia@example.com', '12', '2025-10-27 00:25:57', '$2y$12$RxGOu5QBthaK4vBAbebt7.HOFWncxrxmCEBXgvsbWKwIZk6Eg5fTy', 's3TOl5Gi4p', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
-(34, 'Reuben', 'Carroll', 'king.dahlia@example.com', '2', '2025-10-27 00:25:57', '$2y$12$RxGOu5QBthaK4vBAbebt7.HOFWncxrxmCEBXgvsbWKwIZk6Eg5fTy', 'n2Jrs6yOKg', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
 (35, 'Randall', 'Kulas', 'bertram58@example.org', '8', '2025-10-27 00:25:57', '$2y$12$RxGOu5QBthaK4vBAbebt7.HOFWncxrxmCEBXgvsbWKwIZk6Eg5fTy', 'Eqi6JOY2DR', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
 (36, 'Thelma', 'Dare', 'laurine.stokes@example.com', '4', '2025-10-27 00:25:57', '$2y$12$RxGOu5QBthaK4vBAbebt7.HOFWncxrxmCEBXgvsbWKwIZk6Eg5fTy', 'dPJe7RvwPi', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
 (37, 'Sheila', 'Gutmann', 'hagenes.michale@example.com', '2', '2025-10-27 00:25:57', '$2y$12$RxGOu5QBthaK4vBAbebt7.HOFWncxrxmCEBXgvsbWKwIZk6Eg5fTy', 'mfcAoAVnC1', '2025-10-27 00:25:57', '2025-10-27 00:25:57'),
@@ -266,19 +239,8 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `role_id`, `email
 (45, 'Americo', 'Cruickshank', 'terrence61@example.org', '3', '2025-10-27 00:26:00', '$2y$12$7dNFIs2tbPmJKJcZsEoWR.hLWhx2h8yVKlSPXZko/f890f2gKsKpG', '3lx0fq4Cig', '2025-10-27 00:26:00', '2025-10-27 00:26:00'),
 (46, 'Katrine', 'Schimmel', 'neoma.sauer@example.org', '5', '2025-10-27 00:26:00', '$2y$12$7dNFIs2tbPmJKJcZsEoWR.hLWhx2h8yVKlSPXZko/f890f2gKsKpG', 'q5ROFFLr6Q', '2025-10-27 00:26:00', '2025-10-27 00:26:00'),
 (47, 'Augustine', 'Raynor', 'chance.mckenzie@example.net', '8', '2025-10-27 00:26:00', '$2y$12$7dNFIs2tbPmJKJcZsEoWR.hLWhx2h8yVKlSPXZko/f890f2gKsKpG', 'Wi2NLNhksT', '2025-10-27 00:26:00', '2025-10-27 00:26:00'),
-(48, 'Isobel', 'Orn', 'quincy20@example.org', '18', '2025-10-27 00:26:00', '$2y$12$7dNFIs2tbPmJKJcZsEoWR.hLWhx2h8yVKlSPXZko/f890f2gKsKpG', 'BEtwRsRmQW', '2025-10-27 00:26:00', '2025-10-27 00:26:00'),
-(49, 'Diego', 'O\'Hara', 'odell14@example.org', '17', '2025-10-27 00:26:00', '$2y$12$7dNFIs2tbPmJKJcZsEoWR.hLWhx2h8yVKlSPXZko/f890f2gKsKpG', 'z7LloFtNoS', '2025-10-27 00:26:00', '2025-10-27 00:26:00'),
-(50, 'Benjamin', 'Schmeler', 'jarrell48@example.net', '24', '2025-10-27 00:26:00', '$2y$12$7dNFIs2tbPmJKJcZsEoWR.hLWhx2h8yVKlSPXZko/f890f2gKsKpG', 'OLrZ3CrZr1', '2025-10-27 00:26:00', '2025-10-27 00:26:00'),
-(51, 'Shirley', 'Kuvalis', 'jhegmann@example.com', '26', '2025-10-27 00:26:02', '$2y$12$PG1qc.macydwCksGpHTPU.OjSUC1/Hgw/vFDxDcvWisYnE7gYEI9e', 'ez8aQlbkrS', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(52, 'Emiliano', 'Hagenes', 'wtillman@example.net', '24', '2025-10-27 00:26:02', '$2y$12$PG1qc.macydwCksGpHTPU.OjSUC1/Hgw/vFDxDcvWisYnE7gYEI9e', 'Vqc0Gz4tWE', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(53, 'Chyna', 'Franecki', 'andre.gutkowski@example.net', '29', '2025-10-27 00:26:02', '$2y$12$PG1qc.macydwCksGpHTPU.OjSUC1/Hgw/vFDxDcvWisYnE7gYEI9e', 'JEIPZcLzoe', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(54, 'Yolanda', 'McDermott', 'ebert.daniela@example.com', '21', '2025-10-27 00:26:02', '$2y$12$PG1qc.macydwCksGpHTPU.OjSUC1/Hgw/vFDxDcvWisYnE7gYEI9e', 'q8jjQzIoKo', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(55, 'Maxime', 'Nolan', 'gerhold.alana@example.net', '8', '2025-10-27 00:26:02', '$2y$12$PG1qc.macydwCksGpHTPU.OjSUC1/Hgw/vFDxDcvWisYnE7gYEI9e', 'uLTlcaTjV0', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(56, 'Milford', 'Sanford', 'kherzog@example.org', '21', '2025-10-27 00:26:02', '$2y$12$PG1qc.macydwCksGpHTPU.OjSUC1/Hgw/vFDxDcvWisYnE7gYEI9e', 'OUkCrAZQW9', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(57, 'Frida', 'Treutel', 'vincent.brekke@example.org', '12', '2025-10-27 00:26:02', '$2y$12$PG1qc.macydwCksGpHTPU.OjSUC1/Hgw/vFDxDcvWisYnE7gYEI9e', 'aC4Ci3IFEp', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(58, 'Elton', 'Kassulke', 'lemke.casey@example.com', '21', '2025-10-27 00:26:02', '$2y$12$PG1qc.macydwCksGpHTPU.OjSUC1/Hgw/vFDxDcvWisYnE7gYEI9e', 'OwkbjUKnbC', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(59, 'Delmer', 'Tromp', 'connelly.rodger@example.net', '6', '2025-10-27 00:26:02', '$2y$12$PG1qc.macydwCksGpHTPU.OjSUC1/Hgw/vFDxDcvWisYnE7gYEI9e', 'IFxw9s2aUZ', '2025-10-27 00:26:02', '2025-10-27 00:26:02'),
-(60, 'Mckenna', 'Davis', 'casimer.abbott@example.net', '5', '2025-10-27 00:26:02', '$2y$12$PG1qc.macydwCksGpHTPU.OjSUC1/Hgw/vFDxDcvWisYnE7gYEI9e', 'dgUYI1oatt', '2025-10-27 00:26:02', '2025-10-27 00:26:02');
+(61, 'R.H.', 'Prottoy', 'prottoy@mail.com', '1', NULL, '$2y$12$LO2ss9KPiWO./FKZzyu8puSn5HvT6deES0gcA1ym7I8vrfwbU1TCG', NULL, '2025-10-28 00:47:15', '2025-10-28 00:47:15'),
+(62, 'R.H.', 'Prottoy', 'hasib@example.com', '1', NULL, '$2y$12$SxYR3KpOtWWoUmg48olGZeOyoHqh290arWpXJcdeN5PPOoHLj6l.y', NULL, '2025-10-28 01:16:31', '2025-10-28 01:16:31');
 
 --
 -- Indexes for dumped tables
@@ -381,7 +343,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

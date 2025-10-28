@@ -13,12 +13,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/users/{username}/profile/{id?}', function ($username, $id = null) {  // id is optional....(? means optional)
-    return view('admin.pages/users', [
-        'user' => $username,
-        'id' => $id
-    ]);
-});
+// Route::get('/users/{username}/profile/{id?}', function ($username, $id = null) {  // id is optional....(? means optional)
+//     return view('admin.pages/users', [
+//         'user' => $username,
+//         'id' => $id
+//     ]);
+// });
 
 // Route::get('/about', function () {
 //     return view('pages/about');
@@ -95,5 +95,8 @@ Route::get('/trainees', [TraineeController::class, 'index']);
 // });
 
 Route::get('/trainees/{id}', [TraineeController::class, 'show']);
-Route::get('/users', [UserController::class, 'index'])->name('users');
-Route::get('/users/{id}', [UserController::class, 'show'])->name('show');
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
+Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
