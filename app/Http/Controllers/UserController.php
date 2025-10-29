@@ -68,6 +68,15 @@ class UserController extends Controller
         // dd($roles);   
         return view('admin.pages.users.create',compact('roles'));
     }
+    public function edit($id)
+    {
+        $user =User::find($id);     
+        $roles =Role::all();
+        // dd($roles);   
+        $page = request('page', 1);
+        // dd($page);
+        return view('admin.pages.users.edit',compact('roles', 'user', 'page'));
+    }
     public function store(Request $request)
     {
         // if not validated, below code will not even execute, User::create will not execute
@@ -86,6 +95,27 @@ class UserController extends Controller
             'password' => $request->password,
             'role_id' => $request->role_id,
         ]);
-        dd($user);
+        // dd($user);
+        return redirect()->route('users.index')->with('success', 'User created successfully!');
+    }
+    public function Update(Request $request, $id)
+    {
+        // dd($request->all());
+
+        // if not validated, below code will not even execute, User::create will not execute
+        $request->validate([
+            'first_name' => 'required|min:2|max:20',
+            'last_name' => ['required', 'min:2', 'max:20'],
+        ]);
+
+        // dd($request->all());
+        $user = User::find($id);
+        $user ->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'role_id' => $request->role_id
+        ]);
+        // dd($user);
+        return redirect()->route('users.index', ['page' => $request->page])->with('success', 'User info updated successfully!');
     }
 }

@@ -3,15 +3,15 @@
 @section('content')
     <div class="container mt-5">
         <h2>Users List</h2>
+        <div class="d-flex justify-content-end">
+            <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Add New</a>
+        </div>
         {{-- one time sesstion for showing success message --}}
         @if (session('success'))        
             <div class="alert alert-success" role="alert">
                 {{ session('success') }}
             </div>
         @endif
-        <div class="d-flex justify-content-end">
-            <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Add New</a>
-        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -35,6 +35,7 @@
                         <td>
                             {{-- <a href="/trainees/{{ $item['id'] }}" class="btn btn-primary">View</a> --}}
                             <x-button bg="dark" href="/users/{{ $item['id'] }}">Details</x-button>
+                            <a href="{{ route('users.edit', ['id' => $item['id'], 'page' => request('page', 1)]) }}" class="btn btn-success">Edit</a>
                             <form action="{{ route('users.destroy', $item['id']) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
