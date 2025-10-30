@@ -33,7 +33,7 @@ class UserController extends Controller
         //     ->take(PHP_INT_MAX) // then take rest of the rows
         //     ->get();
         $users = User::from('users as u')
-            ->select('u.id', 'u.first_name', 'u.last_name', 'u.email', 'r.name as role')
+            ->select('u.id', 'u.first_name', 'u.last_name', 'u.email', 'u.photo', 'r.name as role')
             ->join('roles as r', 'u.role_id', '=', 'r.id')
             ->orderBy('u.id', 'desc')
             // ->skip(4)   //skip 4 rows
@@ -49,7 +49,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::from('users as u')
-            ->select('u.id', 'u.first_name', 'u.last_name', 'u.email', 'r.name as role')
+            ->select('u.id', 'u.first_name', 'u.last_name', 'u.email', 'photo', 'r.name as role')
             ->join('roles as r', 'u.role_id', '=', 'r.id')
             ->where('u.id', $id)
             ->first();
@@ -79,19 +79,34 @@ class UserController extends Controller
     }
     public function store(Request $request)
     {
+
+        // dd($request->file('photo'));
         // if not validated, below code will not even execute, User::create will not execute
         $request->validate([
             'first_name' => 'required|min:2|max:20',
             'last_name' => ['required', 'min:2', 'max:20'],
             'email' => ['required', 'email', 'unique:users'],
+            'photo' => ['mimes:jpg,png,jpeg', 'image', 'max:500', 'dimensions:ratio=1/1,width=200,height=200'],
             'password' => ['required', 'min:6', 'confirmed'],
+        ],[
+            'photo.mimes' => 'Image must be jpg jpeg or png',
+            'photo.dimensions' => 'Image dimension must be 200x200'
         ]);
 
+        if($request->hasFile('photo'))
+        {
+            $photo = $request->file('photo')->store('users', 'public'); //goes into storage>app>public>(creates users folder if not created)>then file uploads here...
+        }else{
+            $photo=null;
+        }
+
+        // dd($photo);
         // dd($request->all());
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
+            'photo' => $photo,
             'password' => $request->password,
             'role_id' => $request->role_id,
         ]);

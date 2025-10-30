@@ -7,7 +7,7 @@
             <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Add New</a>
         </div>
         {{-- one time sesstion for showing success message --}}
-        @if (session('success'))        
+        @if (session('success'))
             <div class="alert alert-success" role="alert">
                 {{ session('success') }}
             </div>
@@ -28,14 +28,22 @@
                     <tr>
                         <td>{{ $users->firstItem() + $i }}</td>
                         {{-- <td>{{ $sl }}</td> --}}
-                        <td>{{ $item['first_name'] }}</td>
+                        <td>
+                            @if ($item['photo'] !== null)
+                                <img src="{{ asset('storage/' . $item['photo']) }}" alt="Profile Image" class="rounded-circle me-2" width="50">
+                            @else
+                                <img src="https://placehold.co/50" alt="Profile Image" class="rounded-circle me-2">
+                            @endif
+                            {{ $item['first_name'] }}
+                        </td>
                         <td>{{ $item['last_name'] }}</td>
                         <td>{{ $item['email'] }}</td>
                         <td>{{ $item['role'] }}</td>
                         <td>
                             {{-- <a href="/trainees/{{ $item['id'] }}" class="btn btn-primary">View</a> --}}
                             <x-button bg="dark" href="/users/{{ $item['id'] }}">Details</x-button>
-                            <a href="{{ route('users.edit', ['id' => $item['id'], 'page' => request('page', 1)]) }}" class="btn btn-success">Edit</a>
+                            <a href="{{ route('users.edit', ['id' => $item['id'], 'page' => request('page', 1)]) }}"
+                                class="btn btn-success">Edit</a>
                             <form action="{{ route('users.destroy', $item['id']) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-5">
         <h2>User Form</h2>
-        <form action="{{ route('users.store') }}" method="POST">
+        <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
             {{-- @csrf is used for form submission in laravel --}}
             @csrf
             <div class="row g-3">
@@ -35,6 +35,24 @@
                             <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="col-md-6">
+                    <label>Profile Image 
+                        <span class="text-muted" 
+                            data-bs-toggle="tooltip"
+                            data-bs-title="<ul class='text-start ps-3 mb-1'>
+                                                <li>Image must be jpg, jpeg, png</li>
+                                                <li>Image dimension must be 200x200</li>
+                                                <li>Image size must be less than 500kb</li>
+                                           </ul>" 
+                            data-bs-html="true">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </span>
+                    </label>
+                    <input type="file" name="photo" class="form-control">
+                    @error('photo')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="col-md-6">
                     <label>Password</label>
