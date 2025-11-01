@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2025 at 07:28 AM
+-- Generation Time: Nov 01, 2025 at 08:10 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -251,7 +251,10 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `role_id`, `photo
 (48, 'Viola', 'Stanton', 'frances26@example.net', 5, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'v2VOFpXYjl', '2025-10-29 21:21:01', '2025-10-29 21:21:01'),
 (49, 'Jeff', 'Bezos', 'bjacobs@example.org', 3, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'g9GzMKrQdl', '2025-10-29 21:21:01', '2025-10-29 21:29:39'),
 (50, 'Amos', 'Ryan', 'nora.kunze@example.net', 4, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'gSSgxNdm45', '2025-10-29 21:21:01', '2025-10-29 21:21:01'),
-(51, 'J.K.', 'Rowling', 'jk@mail.com', 2, 'users/dEri7GCVbIftCIUngTo3VWYulliGfJOzpeHSjiUI.jpg', NULL, '$2y$12$vzmifNDCgN4KpPWwymiV2OzuucfDfbUl9JwFHsxkrzLM3xgOsIzuO', NULL, '2025-10-29 23:05:22', '2025-10-29 23:05:22');
+(51, 'J.K.', 'Rowling', 'jk@mail.com', 2, 'users/dEri7GCVbIftCIUngTo3VWYulliGfJOzpeHSjiUI.jpg', NULL, '$2y$12$vzmifNDCgN4KpPWwymiV2OzuucfDfbUl9JwFHsxkrzLM3xgOsIzuO', NULL, '2025-10-29 23:05:22', '2025-10-29 23:05:22'),
+(53, 'example', 'name', 'ex@example.com', 0, NULL, NULL, '$2y$12$LBO4ODoMo/o/nfqFXgOmXudSys2RK47TZmd6MPzhuzstfrF8PSCJ.', NULL, NULL, NULL),
+(54, 'example', 'name', 'ex@mail.com', 3, NULL, NULL, '$2y$12$LBO4ODoMo/o/nfqFXgOmXudSys2RK47TZmd6MPzhuzstfrF8PSCJ.', NULL, NULL, NULL),
+(55, 'Mina', 'M.', 'mina@mail.com', 3, NULL, NULL, '$2y$12$V3C/Xbx6NHjeEx2yH7B1eupsOxDWSpRlL7h6wqxdaqoLPVvaNBpdy', NULL, '2025-11-01 01:01:19', '2025-11-01 01:01:19');
 
 --
 -- Indexes for dumped tables
@@ -354,7 +357,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
