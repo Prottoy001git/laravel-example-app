@@ -13,10 +13,14 @@ class UserController extends Controller
 {
     public function index()
     {
+        // =============
         // Query Builder
+        // =============
         // $users = DB::table('users as u')
 
+        // =============
         // Elequent ORM
+        // =============
         // $users = User::select('users.id', 'users.first_name', 'users.last_name', 'users.email', 'r.name as Role')
         //     ->join('roles as r', 'users.role_id', '=', 'r.id')
         //     ->where('users.role_id', 1)

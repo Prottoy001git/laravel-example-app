@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('status', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->tinyInteger('is_active')->default(1);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('status');
     }
 };

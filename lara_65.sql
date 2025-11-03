@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2025 at 08:10 AM
+-- Generation Time: Nov 03, 2025 at 08:15 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -117,7 +117,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
 (4, '2025_10_27_032452_crete_status_table', 1),
-(5, '2025_10_27_042345_create_roles_table', 1);
+(5, '2025_10_27_042345_create_roles_table', 1),
+(6, '2025_11_03_051510_create_status_table', 2);
 
 -- --------------------------------------------------------
 
@@ -180,6 +181,36 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `status`
+--
+
+CREATE TABLE `status` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `is_active` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `name`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, 'rerum', 0, '2025-11-03 00:27:18', '2025-11-03 00:27:18'),
+(2, 'consequuntur', 0, '2025-11-03 00:27:18', '2025-11-03 00:27:18'),
+(3, 'nihil', 1, '2025-11-03 00:27:18', '2025-11-03 00:27:18'),
+(4, 'ut', 1, '2025-11-03 00:27:18', '2025-11-03 00:27:18'),
+(5, 'est', 1, '2025-11-03 00:27:18', '2025-11-03 00:27:18'),
+(6, 'qui', 1, '2025-11-03 00:27:18', '2025-11-03 00:27:18'),
+(7, 'vero', 1, '2025-11-03 00:27:18', '2025-11-03 00:27:18'),
+(8, 'quia', 1, '2025-11-03 00:27:18', '2025-11-03 00:27:18'),
+(9, 'et', 0, '2025-11-03 00:27:18', '2025-11-03 00:27:18'),
+(10, 'dolorum', 0, '2025-11-03 00:27:18', '2025-11-03 00:27:18');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -202,7 +233,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `role_id`, `photo`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Dandre', 'Eichmann', 'jeremie05@example.com', 2, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'goJV3NEIwt', '2025-10-29 21:20:59', '2025-10-29 21:20:59'),
 (3, 'Dayne', 'Bergstrom', 'hagenes.susanna@example.net', 2, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'P1MsCjx418', '2025-10-29 21:20:59', '2025-10-29 21:20:59'),
 (4, 'Miles', 'Konopelski', 'wsteuber@example.org', 1, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'hAlL1g4Ogs', '2025-10-29 21:20:59', '2025-10-29 21:20:59'),
 (5, 'Daphney', 'Hickle', 'zstark@example.net', 2, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'uat9Z64Kai', '2025-10-29 21:20:59', '2025-10-29 21:20:59'),
@@ -227,7 +257,6 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `role_id`, `photo
 (24, 'Ramon', 'Sporer', 'williamson.rex@example.org', 2, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'FLsS68B3P9', '2025-10-29 21:21:00', '2025-10-29 21:21:00'),
 (25, 'Rudolph', 'Rutherford', 'dcronin@example.org', 3, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'G1ZwJrUYKe', '2025-10-29 21:21:00', '2025-10-29 21:21:00'),
 (26, 'Randy', 'Pfizer', 'simonis.susan@example.net', 4, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', '7eKF2va5zU', '2025-10-29 21:21:00', '2025-10-29 21:30:01'),
-(27, 'Murl', 'Mosciski', 'ywillms@example.com', 5, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'd5SjiRzAaT', '2025-10-29 21:21:00', '2025-10-29 21:21:00'),
 (28, 'Jacky', 'Kutch', 'cassidy42@example.net', 5, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'Q06iaGqc5A', '2025-10-29 21:21:00', '2025-10-29 21:21:00'),
 (29, 'Christiana', 'Frami', 'kovacek.heath@example.net', 5, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'Cto3i6n973', '2025-10-29 21:21:00', '2025-10-29 21:21:00'),
 (30, 'Celestino', 'Hermann', 'kertzmann.dolly@example.org', 5, NULL, '2025-10-29 21:20:59', '$2y$12$c86yPWGPxiw6c1cWUhKo3.OMjTJe5gq0nWY0yvK7FvdV000tYRvtO', 'XcNPaWcEMb', '2025-10-29 21:21:00', '2025-10-29 21:21:00'),
@@ -319,6 +348,12 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
+-- Indexes for table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -345,13 +380,19 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `status`
+--
+ALTER TABLE `status`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
