@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\RegisterConfirmationMail;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
@@ -10,6 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -59,6 +61,16 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
+        // dd($user);
+        $u = User::select('u.first_name', 'u.last_name', 'r.name as role')
+                ->from('users as u')
+                ->join('roles as r','u.role_id', '=', 'r.id')
+                ->where('u.id', $user->id)
+                ->first();
+        // dd($u);
+        
+        Mail::to($user->email)->send(new RegisterConfirmationMail($u));  //use real email in registration form to get mail
+        // dd('Mail Sent');  //check in log file if data is passed when registered 
 
         Auth::login($user);
 

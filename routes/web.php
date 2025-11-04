@@ -3,11 +3,17 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StatusController;
+use App\Mail\RegisterConfirmationMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/test-mail', function () {
+//     Mail::to('redoanul66hasib@gmail.com')->send(new RegisterConfirmationMail());
+//     return 'Mail Sent';
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');

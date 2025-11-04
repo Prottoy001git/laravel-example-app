@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2025 at 08:15 AM
+-- Generation Time: Nov 04, 2025 at 07:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -283,7 +283,13 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `role_id`, `photo
 (51, 'J.K.', 'Rowling', 'jk@mail.com', 2, 'users/dEri7GCVbIftCIUngTo3VWYulliGfJOzpeHSjiUI.jpg', NULL, '$2y$12$vzmifNDCgN4KpPWwymiV2OzuucfDfbUl9JwFHsxkrzLM3xgOsIzuO', NULL, '2025-10-29 23:05:22', '2025-10-29 23:05:22'),
 (53, 'example', 'name', 'ex@example.com', 0, NULL, NULL, '$2y$12$LBO4ODoMo/o/nfqFXgOmXudSys2RK47TZmd6MPzhuzstfrF8PSCJ.', NULL, NULL, NULL),
 (54, 'example', 'name', 'ex@mail.com', 3, NULL, NULL, '$2y$12$LBO4ODoMo/o/nfqFXgOmXudSys2RK47TZmd6MPzhuzstfrF8PSCJ.', NULL, NULL, NULL),
-(55, 'Mina', 'M.', 'mina@mail.com', 3, NULL, NULL, '$2y$12$V3C/Xbx6NHjeEx2yH7B1eupsOxDWSpRlL7h6wqxdaqoLPVvaNBpdy', NULL, '2025-11-01 01:01:19', '2025-11-01 01:01:19');
+(55, 'Mina', 'M.', 'mina@mail.com', 3, NULL, NULL, '$2y$12$V3C/Xbx6NHjeEx2yH7B1eupsOxDWSpRlL7h6wqxdaqoLPVvaNBpdy', NULL, '2025-11-01 01:01:19', '2025-11-01 01:01:19'),
+(56, 'Hei', 'Man', 'hei@mail.com', 4, NULL, NULL, '$2y$12$fFTsnzgBHrhMkkwr3.N3fewBxKlGbKvnM4nemnBvVyNGgZld1DW7y', NULL, '2025-11-03 23:47:59', '2025-11-03 23:47:59'),
+(57, 'Aug', 'r.....', 'augr@mail.com', 4, NULL, NULL, '$2y$12$/TytOaTwbyjNHUcKDNEqKOflJJ831Jdu2UhHoh6J8jWp0vIiIuUjm', NULL, '2025-11-03 23:53:53', '2025-11-03 23:53:53'),
+(58, 'Cieloooo', 'Raynor', 'cielooo@asdfjhasdf.com', 5, NULL, NULL, '$2y$12$QZIeq4izwoRqLrAQ1JzdqugCyOKzpHaQHRF4GC0UgxnPsgB1iLF0O', NULL, '2025-11-03 23:57:48', '2025-11-03 23:57:48'),
+(59, 'jjjjjjjj', 'kkkkkkkk', 'jjjkkk@mail.com', 5, NULL, NULL, '$2y$12$m/5CBy6IHSGqO1Vvx9gtUePbb7ZHGOTAg4M8lRoOK1CKuAn3hyVx2', NULL, '2025-11-04 00:27:01', '2025-11-04 00:27:01'),
+(60, 'R.', 'Hasib', 'hasib@example.com', 2, NULL, NULL, '$2y$12$CY1GQlsCF8UGzt.koqNRK.3qgfCyoU1JJEnk5MB0fgJLpg7zMo0rC', NULL, '2025-11-04 00:30:51', '2025-11-04 00:30:51'),
+(61, 'R.H.', 'Prottoy', 'redoanul66hasib@gmail.com', 1, NULL, NULL, '$2y$12$iGKG15wr.2d4MM.KXgu66eP465/WKIrlT8osciSVSbVwyDcWJ1Qli', NULL, '2025-11-04 00:48:38', '2025-11-04 00:48:38');
 
 --
 -- Indexes for dumped tables
@@ -398,7 +404,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
