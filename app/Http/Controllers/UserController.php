@@ -28,7 +28,9 @@ class UserController extends Controller
         //     ->get();
         // dd($users);
 
+        // =============
         // Elequent ORM
+        // =============
         // $users = User::from('users as u')
         //     ->select('u.id', 'u.first_name', 'u.last_name', 'u.email', 'r.name as role')
         //     ->join('roles as r', 'u.role_id', '=', 'r.id')

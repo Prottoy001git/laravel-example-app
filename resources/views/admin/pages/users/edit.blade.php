@@ -2,6 +2,7 @@
 @section('title', 'Edit User')
 @section('content')
     <div class="container mt-5">
+        @if ($user['id'] == Auth::user()->id)
         <h2>User Edit</h2>
         <form action="{{ route('users.update', $user['id']) }}" method="POST">
             {{-- @csrf is used for form submission in laravel --}}
@@ -50,5 +51,8 @@
                 </div>
             </div>
         </form>
+        @else
+        <h2>You are not authorized to edit this page.</h2>
+        @endif
     </div>
 @endsection
