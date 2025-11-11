@@ -38,19 +38,29 @@ class UserController extends Controller
         //     ->skip(4)   //skip 4 rows
         //     ->take(PHP_INT_MAX) // then take rest of the rows
         //     ->get();
-        $users = User::from('users as u')
+
+        $role_filter_id = request('role_id') ?? 0;
+        // dd($role_id);
+
+        $query = User::from('users as u')
             ->select('u.id', 'u.first_name', 'u.last_name', 'u.email', 'u.photo', 'r.name as role')
             ->join('roles as r', 'u.role_id', '=', 'r.id')
-            ->orderBy('u.id', 'desc')
+            ->orderBy('u.id', 'desc');
             // ->skip(4)   //skip 4 rows
             // ->take(PHP_INT_MAX) // then take rest of the rows
             // ->get();
             // ->paginate(10);   //10 items per page
-            ->paginate(3);      //3 items per page
+            // ->paginate(3);      //3 items per page
+        if($role_filter_id != 0){
+            $query->where('u.role_id', $role_filter_id);
+        }
+        $users = $query->paginate(10);
+        $users->appends(['role_id' => $role_filter_id]);
 
             // $sl = ($users->currentPage()-1) * $users->perPage() + 1;
         // return view('admin.pages.users.index', compact('users', 'sl'));
-        return view('admin.pages.users.index', compact('users'));
+        $roles = Role::all();
+        return view('admin.pages.users.index', compact('users', 'roles'));
     }
     public function show($id)
     {

@@ -12,6 +12,23 @@
                 {{ session('success') }}
             </div>
         @endif
+        <form action="{{ route('users.index') }}" method="GET" class="my-3">
+            <div class="row g-3">
+                <div class="col-auto">
+                    <select name="role_id" class="form-select">
+                        <option value="0">All</option>
+                        @foreach ($roles as $item)
+                            <option value="{{ $item['id'] }}" {{ request('role_id') == $item['id'] ? 'selected' : '' }}>{{ $item['name'] }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-outline-dark">
+                        Apply
+                    </button>
+                </div>
+            </div>
+        </form>
         <table class="table table-striped">
             <thead>
                 <tr>

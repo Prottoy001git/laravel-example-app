@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2025 at 07:49 AM
+-- Generation Time: Nov 11, 2025 at 07:54 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,6 +32,14 @@ CREATE TABLE `cache` (
   `value` mediumtext NOT NULL,
   `expiration` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cache`
+--
+
+INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
+('laravel-cache-redoanul66hasib@gmail.com|127.0.0.1', 'i:3;', 1762409839),
+('laravel-cache-redoanul66hasib@gmail.com|127.0.0.1:timer', 'i:1762409839;', 1762409839);
 
 -- --------------------------------------------------------
 
@@ -289,7 +297,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `role_id`, `photo
 (58, 'Cieloooo', 'Raynor', 'cielooo@asdfjhasdf.com', 5, NULL, NULL, '$2y$12$QZIeq4izwoRqLrAQ1JzdqugCyOKzpHaQHRF4GC0UgxnPsgB1iLF0O', NULL, '2025-11-03 23:57:48', '2025-11-03 23:57:48'),
 (59, 'jjjjjjjj', 'kkkkkkkk', 'jjjkkk@mail.com', 5, NULL, NULL, '$2y$12$m/5CBy6IHSGqO1Vvx9gtUePbb7ZHGOTAg4M8lRoOK1CKuAn3hyVx2', NULL, '2025-11-04 00:27:01', '2025-11-04 00:27:01'),
 (60, 'R.', 'Hasib', 'hasib@example.com', 2, NULL, NULL, '$2y$12$CY1GQlsCF8UGzt.koqNRK.3qgfCyoU1JJEnk5MB0fgJLpg7zMo0rC', NULL, '2025-11-04 00:30:51', '2025-11-04 00:30:51'),
-(61, 'R.H.', 'Prottoy', 'redoanul66hasib@gmail.com', 1, NULL, NULL, '$2y$12$iGKG15wr.2d4MM.KXgu66eP465/WKIrlT8osciSVSbVwyDcWJ1Qli', NULL, '2025-11-04 00:48:38', '2025-11-04 00:48:38');
+(61, 'R.H.', 'Prottoy', 'redoanul66hasib@gmail.com', 1, NULL, NULL, '$2y$12$vk0jVaxXtnIxDN/vThx7DO93TffcgP9XOjxqVo48GyUPtAVX.IU0i', 'xYMawaDYjKXj1ejPW896SZktTDG1HRArWbuaTcM9TwEz7ozzfDVKLgznWa0K', '2025-11-04 00:48:38', '2025-11-05 00:02:50');
 
 --
 -- Indexes for dumped tables
